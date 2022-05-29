@@ -18,11 +18,11 @@
 <nav class="navbar mynav" id="navbar" role="navigation">
     <div class="container">
         <br>
-        <a href={% url 'accounts:base' %}>AITU Blog</a>
-{#        <a href="https://moodle.astanait.edu.kz/">Moodle</a>#}
-{#        <a href='{% url 'hello' %}'>about us</a>#}
-
-
+        <ul class="nav navbar-nav navbar-left">
+        <li><a href={% url 'accounts:base' %}>AITU Blog</a></li>
+        <li><a href="https://moodle.astanait.edu.kz/">Moodle</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        </ul>
 
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
@@ -30,12 +30,12 @@
             <li><a href="{% url 'posts:create' %}">Posts</a></li>
             <li><a href="{% url 'groups:create' %}">Create group</a></li>
             <li><a href="{% url 'accounts:logout' %}">logout</a></li>
-                <li><a href="https://moodle.astanait.edu.kz/">Moodle</a></li>
+{#                <li><a href="https://moodle.astanait.edu.kz/">Moodle</a></li>#}
 
             {% else %}
             <li><a href="{% url 'accounts:signup' %}">Sign up</a></li>
             <li><a href="{% url 'accounts:login' %}">Log in</a></li>
-                <li><a href="https://moodle.astanait.edu.kz/">Moodle</a></li>
+{#                <li><a href="https://moodle.astanait.edu.kz/">Moodle</a></li>#}
              <li><a href="{% url 'groups:all' %}">Groups</a></li>
             {% endif %}
         </ul>

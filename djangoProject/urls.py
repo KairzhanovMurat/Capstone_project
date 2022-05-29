@@ -15,6 +15,7 @@ urlpatterns = [
     path('hello/',views.Hello.as_view(),name='hello'),
     path('groups/',include(group_urls,namespace='groups')),
     path('posts/', include(post_urls, namespace='posts')),
+    path('about_us/',views.About.as_view(),name='about')
 ]
 
 if settings.DEBUG:

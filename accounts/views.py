@@ -16,6 +16,10 @@ class Base(TemplateView):
     template_name = 'base.html'
 
 
+class About(TemplateView):
+    template_name = 'about.html'
+
+
 class SignUp(CreateView):
     form_class = forms.SignUp
     success_url = reverse_lazy('accounts:login')
