@@ -126,8 +126,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS=[join(BASE_DIR,'static')]
 
 
-LOGIN_REDIRECT_URL='hello'
-LOGOUT_REDIRECT_URL='bye'
+LOGIN_REDIRECT_URL='about'
+LOGOUT_REDIRECT_URL='logout'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

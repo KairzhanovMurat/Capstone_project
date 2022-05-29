@@ -27,8 +27,10 @@ class SignUp(CreateView):
 
 
 class Hello(TemplateView):
-    template_name = 'hello.html'
+    template_name = 'about.html'
 
 
-class Bye(TemplateView):
-    template_name = 'bye.html'
+class Logout(TemplateView):
+    template_name = 'Logout.html'
+
+

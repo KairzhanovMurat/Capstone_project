@@ -11,8 +11,7 @@ urlpatterns = [
     path('accounts/',include(acc_urls,namespace='accounts')),
     path('',views.Base.as_view()),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('bye/',views.Bye.as_view(),name='bye'),
-    path('hello/',views.Hello.as_view(),name='hello'),
+    path('Logout/',views.Logout.as_view(),name='logout'),
     path('groups/',include(group_urls,namespace='groups')),
     path('posts/', include(post_urls, namespace='posts')),
     path('about_us/',views.About.as_view(),name='about')

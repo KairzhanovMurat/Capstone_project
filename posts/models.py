@@ -29,7 +29,7 @@ class Post(models.Model):
         return reverse(
             "posts:single",
             kwargs={
-                "username": self.user.name,
+                "username": self.user.username,
                 "pk": self.pk
             }
         )

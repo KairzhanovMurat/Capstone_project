@@ -37,10 +37,15 @@ class PostDetail(generic.DetailView,SelectRelatedMixin):
     model=models.Post
     select_related = ('post','group')
 
-    def get_queryset(self):
-        queryset=super().get_queryset()
-        return queryset.filter(user__username_iexact=self.kwargs.get('username'))
+    # def get_queryset(self):
+    #     queryset=super().get_queryset()
+    #     return queryset.filter(user__username_iexact=self.kwargs.get('username'))
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(
+            user__username__iexact=self.kwargs.get("username")
+        )
 
 class CreatePost(generic.CreateView,LoginRequiredMixin,SelectRelatedMixin):
     model = models.Post
