@@ -4,6 +4,8 @@ from django.views import generic
 from groups.models import Group,GroupMember
 from django.urls import reverse
 from django.contrib import messages
+from rest_framework import viewsets
+from . import serializers
 # Create your views here.
 
 class CreateGroup(LoginRequiredMixin,generic.CreateView):
@@ -61,3 +63,13 @@ class LeaveGroup(LoginRequiredMixin, generic.RedirectView):
                 "You have successfully left this group."
             )
         return super().get(request, *args, **kwargs)
+
+
+class GroupViewSet(viewsets.ModelViewSet):
+    queryset = Group.objects.all()
+    serializer_class = serializers.GroupSerializer
+
+
+class GroupmemberViewSet(viewsets.ModelViewSet):
+    queryset = GroupMember.objects.all()
+    serializer_class = serializers.GroupmemberSerializer
